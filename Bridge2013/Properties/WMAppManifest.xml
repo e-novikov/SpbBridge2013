@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
+  <App xmlns="" ProductID="{09f5ff38-5ba5-42e6-9fb0-6316fc1c049b}" Title="Мосты 2013" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Novikov Egor" Description="График разводки мостов в Санкт-Петербурге на 2013 год" Publisher="Novikov Egor" BitsPerPixel="32">
+    <IconPath IsRelative="true" IsResource="false">icon.png</IconPath>
+    <Capabilities>
+      <Capability Name="ID_CAP_NETWORKING" />
+      <Capability Name="ID_CAP_LOCATION" />
+    </Capabilities>
+    <Tasks>
+      <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="Yandex.Maps.DocToken" TaskName="_default">
+        <TemplateType5>
+          <BackgroundImageURI IsRelative="true" IsResource="false">iconTile.png</BackgroundImageURI>
+          <Count>0</Count>
+          <Title>Мосты 2013</Title>
+        </TemplateType5>
+      </PrimaryToken>
+    </Tokens>
+  </App>
+</Deployment>

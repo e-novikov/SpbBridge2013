@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bridges>
+  <Bridge name="Александра Невского"
+          openingTime=""
+          coordinates=""
+          latitude="59.92562"
+          longitude="30.39589"
+          id="1"
+          timeOpen="2:20"
+          timeClose="5:10">
+Мост Александра Невского
+разводка: 2:20-5:10
+  </Bridge>
+  <Bridge name="Биржевой"
+          openingTime=""
+          coordinates=""
+          latitude="59.94618"
+          longitude="30.30343"
+          id="2"
+          timeOpen="1:05"
+          timeClose="5:10">
+Биржевой мост
+разводка: 1:05-5:10
+  </Bridge>
+  <Bridge name="Большеохтинский"
+          openingTime=""
+          coordinates=""
+          latitude="59.94253"
+          longitude="30.40159"
+          id="3"
+          timeOpen="1:40"
+          timeClose="5:00">
+Большеохтинский мост
+разводка: 1:40-5:00
+  </Bridge>
+  <Bridge name="Володарский"
+          openingTime=""
+          coordinates=""
+          latitude="59.87762"
+          longitude="30.45336"
+          id="4"
+          timeOpen="2:00"
+          timeClose="5:45">
+Володарский мост
+разводка: 2:00-5:45
+  </Bridge>
+  <Bridge name="Литейный"
+          openingTime=""
+          coordinates=""
+          latitude="59.95161"
+          longitude="30.34948"
+          id="5"
+          timeOpen="1:20"
+          timeClose="5:00">
+Литейный мост
+разводка: 1:20-5:00
+  </Bridge>
+  <Bridge name="Троицкий"
+          openingTime=""
+          coordinates=""
+          latitude="59.94849"
+          longitude="30.32768"
+          id="6"
+          timeOpen="1:15"
+          timeClose="5:05">
+Троицкий мост
+разводка: 1:15-5:05
+  </Bridge>
+  <Bridge name="Тучков"
+          openingTime=""
+          coordinates=""
+          latitude="59.94887"
+          longitude="30.28566"
+          id="7"
+          timeOpen="1:05;3:05"
+          timeClose="2:35;5:15">
+Тучков мост
+разводка: 1:05-2:35 / 3:05-5:15
+  </Bridge>
+  <Bridge name="Финляндский"
+          openingTime=""
+          coordinates=""
+          latitude="59.91529"
+          longitude="30.40941"
+          id="8"
+          timeOpen="2:20"
+          timeClose="5:30">
+Финляндский мост
+разводка: 2:20-5:30
+  </Bridge>
+</Bridges>
