@@ -76,14 +76,14 @@ namespace Bridge2013
 
                 if (time1.TotalSeconds > 0)
                 {
-                    Title.Text = "До разводки осталось";
+                    //Title.Text = "До разводки осталось";
                     Time.Text = string.Format("{0:00}:{1:00}:{2:00}", time1.Hours, time1.Minutes,time1.Seconds);
                     Colorize(White);
                     return;
                 }
                 else if (time1.TotalSeconds < 0 && time2.TotalSeconds > 0)
                 {
-                    Title.Text = "До сведения осталось";
+                    //Title.Text = "До сведения осталось";
                     Time.Text = string.Format("{0:00}:{1:00}:{2:00}", time2.Hours, time2.Minutes, time2.Seconds);
                     Colorize(Blue);
                     return;
@@ -93,7 +93,7 @@ namespace Bridge2013
             int oH = int.Parse(oTimeSplitted[0]);
             int oM = int.Parse(oTimeSplitted[1]);
             TimeSpan oTime = new TimeSpan(oH, oM, 0);
-            Title.Text = "До разводки осталось";
+           // Title.Text = "До разводки осталось";
             TimeSpan t = (oTime + new TimeSpan(24, 0, 0)) - nowTime;
             Time.Text = string.Format("{0:00}:{1:00}:{2:00}", t.Hours, t.Minutes, t.Seconds);
             Colorize(White);
@@ -106,13 +106,23 @@ namespace Bridge2013
 
         private void Colorize(Color c)
         {
-            Time.Foreground = new SolidColorBrush(c);
-            Title.Foreground = new SolidColorBrush(c);
+            //Time.Foreground = new SolidColorBrush(c);
+            //Title.Foreground = new SolidColorBrush(c);
         }
 
         private void Button1Tap(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/MapPage.xaml?bridgeId=" + bridge.Id, UriKind.Relative));
+        }
+
+        private void PreferenceClicked(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/PreferencesPage.xaml", UriKind.Relative));
+        }
+
+        private void AboutClicked(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/About.xaml", UriKind.Relative));
         }
     }
 }

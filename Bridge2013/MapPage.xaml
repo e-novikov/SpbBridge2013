@@ -74,8 +74,8 @@
                             <Border x:Name="ButtonBackground">
                                 <ContentControl x:Name="ContentContainer" ContentTemplate="{TemplateBinding ContentTemplate}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <Grid Height="48" Width="48" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                        <Image x:Name="image" Source="icons/ZoomIn_Black.png" Stretch="Fill" Visibility="Collapsed"/>
-                                        <Image x:Name="image1" Source="icons/ZoomIn_White.png" Stretch="Fill"/>
+                                        <Image x:Name="image" Source="icons/ZoomIn_White.png" Stretch="Fill" Visibility="Collapsed"/>
+                                        <Image x:Name="image1" Source="icons/ZoomIn_Black.png" Stretch="Fill"/>
                                     </Grid>
                                 </ContentControl>
                             </Border>
@@ -139,8 +139,8 @@
                             <Border x:Name="ButtonBackground">
                                 <ContentControl x:Name="ContentContainer" ContentTemplate="{TemplateBinding ContentTemplate}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <Grid Height="48" Width="48" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                        <Image x:Name="image1" Source="icons/ZoomOut_White.png" Stretch="Fill"/>
-                                        <Image x:Name="image" Source="icons/ZoomOut_Black.png" Stretch="Fill" Visibility="Collapsed"/>
+                                        <Image x:Name="image1" Source="icons/ZoomOut_Black.png" Stretch="Fill"/>
+                                        <Image x:Name="image" Source="icons/ZoomOut_White.png" Stretch="Fill" Visibility="Collapsed"/>
                                     </Grid>
                                 </ContentControl>
                             </Border>
@@ -165,6 +165,10 @@
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
             <shell:ApplicationBarIconButton IconUri="icons/appbar.eye.png" Text="мое положение" Click="Button1Tap"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Настройки" Click="PreferenceClicked"/>
+                <shell:ApplicationBarMenuItem Text="О программе" Click="AboutClicked"/>
+            </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
     

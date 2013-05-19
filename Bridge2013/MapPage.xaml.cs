@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using Microsoft.Phone.Controls.Maps;
 using System.Windows.Media;
 using System.Device.Location;
+using System.IO.IsolatedStorage;
 
 namespace Bridge2013
 {
@@ -73,12 +74,15 @@ namespace Bridge2013
             base.OnNavigatedTo(e);
             string id;
 
-            if (gcw == null)
-                gcw = new GeoCoordinateWatcher();
+            if (Settings.IsNavigationEnabled)
+            {
+                if (gcw == null)
+                    gcw = new GeoCoordinateWatcher();
 
-            gcw = new GeoCoordinateWatcher(GeoPositionAccuracy.High);
-            gcw.Start();
-            gcw.PositionChanged += new EventHandler<GeoPositionChangedEventArgs<GeoCoordinate>>(CoordinateWatcher_PositionChanged);
+                gcw = new GeoCoordinateWatcher(GeoPositionAccuracy.High);
+                gcw.Start();
+                gcw.PositionChanged += new EventHandler<GeoPositionChangedEventArgs<GeoCoordinate>>(CoordinateWatcher_PositionChanged);
+            }
             
             if (NavigationContext.QueryString.TryGetValue("bridgeId", out id))
             {
@@ -112,6 +116,12 @@ namespace Bridge2013
 
         private void Button1Tap(object sender, EventArgs e)
         {
+            if (!Settings.IsNavigationEnabled)
+            {
+                MessageBox.Show("Disabled");
+                return;
+            }
+
             switch (gcw.Status)
             {
                 case GeoPositionStatus.Disabled:
@@ -119,9 +129,6 @@ namespace Bridge2013
                     break;
                 case GeoPositionStatus.NoData:
                     MessageBox.Show("NoData");
-                    break;
-                case GeoPositionStatus.Initializing:
-                    ProgressIndicator.Text = "Initializing";
                     break;
             }
             if (!gcw.Position.Location.IsUnknown)
@@ -136,6 +143,16 @@ namespace Bridge2013
             base.OnNavigatedFrom(e);
             if (gcw != null)
                 gcw.Stop();
+        }
+
+        private void PreferenceClicked(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/PreferencesPage.xaml", UriKind.Relative));
+        }
+
+        private void AboutClicked(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/About.xaml", UriKind.Relative));
         }
     }
 
